@@ -1,0 +1,18 @@
+type: code
+files:
+- name: main.js
+  visible: true
+  text: konsole.frog(A trifle, even a quite pleasant trifle!))
+  learner_created: false
+- name: task-info (2).yaml
+  visible: true
+  learner_created: true
+- name: task-remote-info (2).yaml
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/8158#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 09 Sep 2021 08:10:33 UTC
+record: -1

@@ -1,0 +1,13 @@
+type: code
+custom_name: I like JavaScript!
+files:
+- name: main.js
+  visible: true
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8020#comment
+status: Failed
+feedback:
+  message: |
+    Failed. Wrong answer
+  time: Thu, 09 Sep 2021 07:46:53 UTC
+record: -1
