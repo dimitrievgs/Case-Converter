@@ -1,0 +1,15 @@
+type: code
+files:
+- name: main.js
+  visible: true
+  text: |-
+    function takeFirstN(array, n) {
+        // change it
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9250#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 09 Sep 2021 14:59:43 UTC
+record: -1
