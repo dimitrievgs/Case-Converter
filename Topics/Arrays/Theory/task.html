@@ -1,0 +1,59 @@
+<h2>Arrays</h2>
+<html>
+ <head></head>
+ <body>
+  <p>  </p>
+  <p>Imagine a situation: you're writing a shopping list before going to a supermarket. To save time, you're listing the items exactly in the order you're going to shop around: first, you'll get food, then some cleaning supplies, next you'll buy some stationery... If you were writing the shopping list not on paper but with the help of JavaScript, <code class="language-javascript">Arrays</code> would fit that purpose best.</p> 
+  <p><code class="language-javascript">Arrays</code> are an<em> </em>ordered collection that allows us to keep the values in a strictly defined order. We can access the elements by index: if you need item 15, you get item 15!</p> 
+  <p>Now let's take a look at a few examples and see what arrays are all about.</p> 
+  <h2>Setting an array</h2> 
+  <p>An <code class="language-javascript">Array</code> that already has some values can be set this way:</p> 
+  <pre><code class="language-javascript">let items = ["cheese", "shampoo", "pen"];</code></pre> 
+  <p>To set an empty <code class="language-javascript">Array</code>, use one of the two ways shown below:</p> 
+  <pre><code class="language-javascript">let emptyArrayOne = new Array();
+let emptyArrayTwo = [];</code></pre> 
+  <h2>Reading elements by index</h2> 
+  <p>The main difference between <code class="language-javascript">Objects</code> and <code class="language-javascript">Arrays</code> lays in getting the values: you get object values through the string key, and array values through the ordinal index (the element's number). The indexes are numbered starting from zero.</p> 
+  <p>Let's print out every single element in the example with items using the indexes:</p> 
+  <pre><code class="language-javascript">console.log(items[0]);
+console.log(items[1]);
+console.log(items[2]);</code></pre> 
+  <p>In the output, we get the following:</p> 
+  <pre><code class="language-javascript">cheese
+shampoo
+pen</code></pre> 
+  <p>The zeroth element here is <code class="language-javascript">cheese</code>, the 1st is <code class="language-javascript">shampoo</code>, and the 2nd is <code class="language-javascript">pen</code>. The third element doesn't exist, therefore we can't call it.</p> 
+  <p>To display the whole <code class="language-javascript">Array</code>, we can call it by its name, without any indexes:</p> 
+  <pre><code class="language-javascript">console.log(items);</code></pre> 
+  <h2>Writing elements by index</h2> 
+  <p>To write a new element or rewrite an old one, use the following syntax:</p> 
+  <pre><code class="language-javascript">items[1] = "soap";
+items[3] = "book";</code></pre> 
+  <p>Here, we set the sixth element skipping the fifth and therefore leaving the fifth one empty:</p> 
+  <pre><code class="language-javascript">items[5] = "postcard";
+console.log(items);</code></pre> 
+  <p>The output of this code will be the following:</p> 
+  <pre><code class="language-javascript">Array(6) [ "cheese", "soap", "pen", "book", undefined, "postcard" ]</code></pre> 
+  <p><code class="language-javascript">Array</code>'s length is kept in its property <code class="language-javascript">length</code>:</p> 
+  <pre><code class="language-javascript">console.log(items.length);</code></pre> 
+  <h2>Arrays in queues</h2> 
+  <p>Usually, <code class="language-javascript">Arrays</code> are used with two kinds of data structures: <code class="language-javascript">queue</code> and <code class="language-javascript">stack</code>.</p> 
+  <p>To understand what a <code class="language-javascript">queue</code> is, you can imagine an ordinary queue in a food store: new people join the queue at its end, and those in the beginning leave first. That's why we need two methods to implement a <code class="language-javascript">queue</code>: one that adds elements to the end of the <code class="language-javascript">Array</code> and one that deletes the elements at the beginning of the <code class="language-javascript">queue</code>. These two methods are <code class="language-javascript">push()</code>, which adds one or more elements to the end of an array and returns a new array length, and <code class="language-javascript">shift()</code>, which deletes the zeroth element of an array and returns its value:</p> 
+  <pre><code class="language-javascript">items.push("flowers");
+items.shift();
+console.log(items);</code></pre> 
+  <p>Note that the deleted element also shifts the <code class="language-javascript">queue</code>, so the first element becomes zeroth, the second turns first, and so on.</p> 
+  <pre><code class="language-javascript">Array(6) [ "soap", "pen", "book", undefined, "postcard", "flowers" ]</code></pre> 
+  <h2>Arrays in stacks</h2> 
+  <p>To get the idea behind <code class="language-javascript">stacks</code>, imagine a stack (a pile) of paper sheets. We stack these sheets in a certain order, one by one. We add each new elements to the top, and when we need to take a specific sheet out of the stack, we also have to start from the top, from the very last element.</p> 
+  <p>We need two methods for implementing a <code class="language-javascript">stack</code>: adding an element to the end and deleting the last one. We already know how to add an element to the end: that's our good old <code class="language-javascript">push()</code> method. The method <code class="language-javascript">pop()</code> is responsible for deleting the last element and returns its value:</p> 
+  <pre><code class="language-javascript">items.pop();
+console.log(items);</code></pre> 
+  <p>The output will be as the following:</p> 
+  <pre><code class="language-javascript">Array(5) [ "soap", "pen", "book", undefined, "postcard" ]</code></pre> 
+  <p>As expected, the last element (flowers) was deleted.</p> 
+  <h2>Conclusion</h2> 
+  <p>In the current topic, we considered a new data structure, <code class="language-javascript">Arrays</code>. We learned about the operations of reading, writing, adding a new element to the end of <code class="language-javascript">Array</code>, and deleting the first and the last element from it. In the examples, we also got familiar with <code class="language-javascript">queues</code> and <code class="language-javascript">stacks</code>.</p> 
+  <p>Now it's time to put the new knowledge into practice.</p>
+ </body>
+</html>
