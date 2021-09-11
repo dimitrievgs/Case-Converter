@@ -5,16 +5,73 @@
     <title>Case Converter</title>
 </head>
 <body>
-    <div class="title">Case Converter</div>
-    <textarea></textarea>
+<div class="title">Case Converter</div>
+<textarea id="txt1"></textarea>
+<!--<textarea id="txt2"></textarea>-->
 
-    <button id="upper-case">Upper Case</button>
-    <button id="lower-case">Lower Case</button>
-    <button id="proper-case">Proper Case</button>
-    <button id="sentence-case">Sentence Case</button>
+<button id="upper-case">Upper Case</button>
+<button id="lower-case">Lower Case</button>
+<button id="proper-case">Proper Case</button>
+<button id="sentence-case">Sentence Case</button>
+<button id="save-text-file">Save</button>
 
-    <script>
-        console.log("ХАЙ");
-    </script>
+<script>
+    let upperCase = document.getElementById("upper-case");
+    let lowerCase = document.getElementById("lower-case");
+    let properCase = document.getElementById("proper-case");
+    let sentenceCase = document.getElementById("sentence-case");
+    let saveTextFile = document.getElementById("save-text-file");
+
+    let txt1 = document.getElementById("txt1");
+    //let txt2 = document.getElementById("txt2");
+
+    upperCase.addEventListener("click", function () {
+        txt1.value = makeUpperCase(txt1.value);
+    });
+    lowerCase.addEventListener("click", function () {
+        txt1.value = makeLowerCase(txt1.value)
+    });
+    properCase.addEventListener("click", function () {
+        txt1.value = makeProperCase(txt1.value);
+    });
+    sentenceCase.addEventListener("click", function () {
+        txt1.value = makeSentenceCase(txt1.value);
+    });
+    saveTextFile.addEventListener("click", function () {
+        download("text.txt", txt1.value);
+    });
+
+
+    function makeUpperCase(textIn) {
+        return textIn.toUpperCase();
+    };
+
+    function makeLowerCase(textIn) {
+        return textIn.toLowerCase();
+    };
+
+    function makeProperCase(textIn) {
+        return textIn.toLowerCase().replace(/^(.)|\s(.)/g,
+            function($1) { return $1.toUpperCase(); });
+    };
+
+    function makeSentenceCase(textIn) {
+        return textIn.toLowerCase().replace(/(^\w{1}|\.\s*\w{1})/gi,
+            function($1) { return $1.toUpperCase(); });
+    };
+
+    function download(filename, text) {
+        let element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+    }
+</script>
 </body>
 </html>
